@@ -1,28 +1,38 @@
-# Tahap build
-FROM node:18-alpine AS builder
-
+# =====================
+# 1. Dependencies
+# =====================
+FROM node:20-alpine AS deps
 WORKDIR /app
 
-# Copy package.json dan package-lock.json
-COPY package*.json ./
+COPY package.json package-lock.json* ./
+RUN npm install --frozen-lockfile
 
-RUN npm install
+# =====================
+# 2. Build
+# =====================
+FROM node:20-alpine AS builder
+WORKDIR /app
 
-# Copy seluruh source code
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build Next.js dan export statik
-RUN npm run build && npm run export
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm run build
 
-# Tahap serve dengan nginx
-FROM nginx:alpine
+# =====================
+# 3. Production
+# =====================
+FROM node:20-alpine AS runner
+WORKDIR /app
 
-# Hapus default html
-RUN rm -rf /usr/share/nginx/html/*
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Copy hasil export ke nginx
-COPY --from=builder /app/out /usr/share/nginx/html
+# Jika pakai standalone output (disarankan)
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 
-EXPOSE 80
+EXPOSE 3000
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.js"]
