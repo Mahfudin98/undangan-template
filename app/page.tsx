@@ -6,10 +6,9 @@ import {
   MdCelebration,
   MdMap,
   MdOutlineCheckroom,
-  MdOutlineHistoryEdu,
-  MdOutlineVerified,
   MdShare,
 } from "react-icons/md";
+import FormMessage from "./_components/form-message";
 
 export default function Home() {
   return (
@@ -88,7 +87,7 @@ export default function Home() {
                 Babang
               </h2>
               <p className="text-white/80 max-w-xs text-sm leading-relaxed">
-                Melangkah penuh keberanian dalam babak baru kehidupan.
+                TASYAKUR KHITANAN BABANG ADHITAMA
               </p>
             </div>
           </div>
@@ -115,10 +114,10 @@ export default function Home() {
                 Ulang Tahun
               </span>
               <h2 className="text-5xl md:text-7xl font-serif font-bold mb-2 text-rose-gold">
-                Aa
+                Aa Haji
               </h2>
               <p className="text-white/80 max-w-xs text-sm leading-relaxed">
-                Merayakan satu tahun kebahagiaan dan tawa yang ceria.
+                TASYAKUR HARI ULANG TAHUN OWNER (H. ACENG SUNANTO)
               </p>
             </div>
           </div>
@@ -166,9 +165,11 @@ export default function Home() {
                   Waktu
                 </h4>
                 <p className="text-2xl font-serif font-bold text-burgundy">
-                  Pukul 19.00 WIB
+                  Pukul 10:00 - 23:00 WIB
                 </p>
-                <p className="text-sm text-slate-500 mt-1">Sampai Selesai</p>
+                <p className="text-sm text-slate-500 mt-1">
+                  Acara puncak pukul 19.30 WIB
+                </p>
               </div>
               <div className="bg-burgundy p-10 rounded-3xl shadow-2xl flex flex-col items-center text-center text-white">
                 <div className="size-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
@@ -195,16 +196,16 @@ export default function Home() {
                   Lokasi Perayaan
                 </span>
                 <h3 className="text-4xl font-serif font-bold mb-6">
-                  Grand Ballroom Majestic
+                  Embung Sokalayar
                 </h3>
                 <p className="text-slate-600 mb-8 leading-relaxed">
-                  Jl. Kemakmuran No. 88, Jakarta Pusat.
+                  Blok Kubangsari, RT./Rw/RW.10/04
                   <br />
-                  Gedung dengan parkir luas dan fasilitas nyaman untuk keluarga.
+                  Tenjolayar, Kec. Cigasong, Kabupaten Majalengka
                 </p>
                 <a
                   className="inline-flex items-center gap-2 bg-burgundy text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform"
-                  href="#"
+                  href="https://maps.app.goo.gl/zV188AFzE8saKwjV9"
                 >
                   <MdMap />
                   Petunjuk Lokasi
@@ -236,7 +237,7 @@ export default function Home() {
               Kehadiran Anda adalah kado terindah, namun keselarasan warna akan
               mempercantik kenangan kita.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-12 items-center justify-center mb-20">
+            <div className="grid grid-cols-2 gap-12 items-center justify-center mb-20">
               <div className="group">
                 <div className="size-32 mx-auto rounded-full bg-burgundy ring-offset-4 ring-4 ring-burgundy shadow-[0_20px_50px_rgba(128,0,32,0.3)] transition-transform group-hover:scale-110"></div>
                 <p className="mt-8 font-bold text-burgundy tracking-widest uppercase text-xs">
@@ -247,12 +248,6 @@ export default function Home() {
                 <div className="size-32 mx-auto rounded-full bg-rose-gold ring-offset-4 ring-4 ring-rose-gold shadow-[0_20px_50px_rgba(183,110,121,0.3)] transition-transform group-hover:scale-110"></div>
                 <p className="mt-8 font-bold text-rose-gold tracking-widest uppercase text-xs">
                   Rose Gold
-                </p>
-              </div>
-              <div className="group col-span-2 md:col-span-1">
-                <div className="size-32 mx-auto rounded-full bg-slate-400 ring-offset-4 ring-4 ring-slate-400 shadow-[0_20px_50px_rgba(148,163,184,0.3)] transition-transform group-hover:scale-110"></div>
-                <p className="mt-8 font-bold text-slate-500 tracking-widest uppercase text-xs">
-                  Soft Gray
                 </p>
               </div>
             </div>
@@ -267,7 +262,7 @@ export default function Home() {
           </div>
         </section>
         {/* pesan */}
-        <section className="py-24 px-6 bg-soft-gray" id="ucapan">
+        {/* <section className="py-24 px-6 bg-soft-gray" id="ucapan">
           <div className="max-w-5xl mx-auto">
             <div className="bg-white rounded-3xl lg:rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
               <div className="lg:w-1/3 bg-burgundy p-6 lg:p-12 text-white">
@@ -331,7 +326,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        <FormMessage />
       </main>
       {/* end main */}
 
