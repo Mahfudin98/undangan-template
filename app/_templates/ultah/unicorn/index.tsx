@@ -8,6 +8,7 @@ import {
 } from "./components/UnicornElements";
 import fs from "fs";
 import path from "path";
+import { WelcomeSplash } from "./components/WelcomeSplash";
 
 async function getRSVPData(): Promise<RSVPEntry[]> {
   try {
@@ -33,7 +34,7 @@ const INVITATION_DATA = {
   address:
     "Jl. K.H.Abdul Halim No.88, Munjul, Kec. Majalengka, Kabupaten Majalengka, Jawa Barat 45418", // Tambahkan alamat lengkap
   dresscode: "Pink & Ungu",
-  parentName: "Keluarga Besar", // Nama orang tua / penyelenggara
+  parentName: "Aceng Sunanto & Mia Nurma Sunanto", // Nama orang tua / penyelenggara
   guestName: "Tamu Istimewa", // Bisa diubah dinamis per tamu
 };
 // =============================================
@@ -48,6 +49,11 @@ export default async function InvitationPage() {
           "linear-gradient(160deg, #fff0f9 0%, #f5e8ff 30%, #ffe0f5 60%, #f8e8ff 100%)",
       }}
     >
+      {/* Music Player */}
+      <WelcomeSplash
+        src="/music/birthday.mp3"
+        birthdayPerson={INVITATION_DATA.birthdayPerson}
+      />
       {/* Background decorative circles */}
       <div
         className="fixed top-0 left-0 w-full h-full pointer-events-none"
