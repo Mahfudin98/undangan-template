@@ -12,12 +12,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Undangan Digital",
-  description:
-    "Undangan TASYAKUR KHITANAN BABANG ADHITAMA & TASYAKUR HARI ULANG TAHUN OWNER (H. ACENG SUNANTO)",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
