@@ -1,7 +1,7 @@
 "use client";
 
+import { RSVPEntry } from "@/app/api/rsvp/route";
 import { useState, useEffect, useCallback } from "react";
-import type { RSVPEntry } from "../api/rsvp/route";
 
 const EMOJIS_HADIR = ["🎉", "🦄", "🌈", "💜", "🎂", "✨", "🌸", "🎈"];
 const EMOJIS_TIDAK = ["😢", "💌", "🌷", "💫", "🥺", "🌙"];
@@ -31,10 +31,7 @@ interface WishCardProps {
 
 function WishCard({ entry, index }: WishCardProps) {
   const isHadir = entry.status === "hadir";
-  const emoji = randomEmoji(
-    isHadir ? EMOJIS_HADIR : EMOJIS_TIDAK,
-    entry.id
-  );
+  const emoji = randomEmoji(isHadir ? EMOJIS_HADIR : EMOJIS_TIDAK, entry.id);
 
   return (
     <div
@@ -95,10 +92,7 @@ function WishCard({ entry, index }: WishCardProps) {
           )}
 
           {/* Date */}
-          <p
-            className="mt-1.5 text-xs"
-            style={{ color: "#c8a8f9" }}
-          >
+          <p className="mt-1.5 text-xs" style={{ color: "#c8a8f9" }}>
             {formatDate(entry.createdAt)}
           </p>
         </div>
@@ -107,14 +101,12 @@ function WishCard({ entry, index }: WishCardProps) {
   );
 }
 
-export function WishesWall({
-  initialData,
-}: {
-  initialData: RSVPEntry[];
-}) {
+export function WishesWall({ initialData }: { initialData: RSVPEntry[] }) {
   const [entries, setEntries] = useState<RSVPEntry[]>(initialData);
   const [loading, setLoading] = useState(false);
-  const [filter, setFilter] = useState<"semua" | "hadir" | "tidak_hadir">("semua");
+  const [filter, setFilter] = useState<"semua" | "hadir" | "tidak_hadir">(
+    "semua",
+  );
 
   const refresh = useCallback(async () => {
     setLoading(true);
@@ -134,9 +126,7 @@ export function WishesWall({
   }, [refresh]);
 
   const filtered =
-    filter === "semua"
-      ? entries
-      : entries.filter((e) => e.status === filter);
+    filter === "semua" ? entries : entries.filter((e) => e.status === filter);
 
   const totalHadir = entries.filter((e) => e.status === "hadir").length;
   const totalTidak = entries.filter((e) => e.status === "tidak_hadir").length;
@@ -148,7 +138,8 @@ export function WishesWall({
         <div
           className="flex-1 min-w-[80px] rounded-2xl p-3 text-center"
           style={{
-            background: "linear-gradient(135deg, rgba(255,133,194,0.2), rgba(179,71,234,0.2))",
+            background:
+              "linear-gradient(135deg, rgba(255,133,194,0.2), rgba(179,71,234,0.2))",
             border: "1.5px solid rgba(179,71,234,0.2)",
           }}
         >
@@ -203,12 +194,14 @@ export function WishesWall({
                   : "rgba(255,255,255,0.5)",
               color: filter === f ? "#fff" : "#7c15c8",
               border:
-                filter === f
-                  ? "none"
-                  : "1.5px solid rgba(179,71,234,0.2)",
+                filter === f ? "none" : "1.5px solid rgba(179,71,234,0.2)",
             }}
           >
-            {f === "semua" ? "✨ Semua" : f === "hadir" ? "🎉 Hadir" : "😢 Tidak Hadir"}
+            {f === "semua"
+              ? "✨ Semua"
+              : f === "hadir"
+                ? "🎉 Hadir"
+                : "😢 Tidak Hadir"}
           </button>
         ))}
       </div>
@@ -238,7 +231,8 @@ export function WishesWall({
           </p>
         </div>
       ) : (
-        <div className="space-y-3 max-h-96 overflow-y-auto pr-1"
+        <div
+          className="space-y-3 max-h-96 overflow-y-auto pr-1"
           style={{
             scrollbarWidth: "thin",
             scrollbarColor: "#b347ea transparent",
