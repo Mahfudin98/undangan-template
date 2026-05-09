@@ -33,8 +33,9 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
-# Pastikan sharp ada di dependencies
-RUN npm install sharp
+# Pastikan semua dependencies runtime ada (sharp, dll)
+COPY --from=deps /app/node_modules ./node_modules
+COPY package.json ./
 
 EXPOSE 3000
 
