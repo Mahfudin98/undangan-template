@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
       "invitation.lsskincare.id", // ✅ tambahkan domain production
       "localhost", // ✅ untuk dev
     ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "invitation.lsskincare.id",
+      },
+    ],
   },
 };
 
