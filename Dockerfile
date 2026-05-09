@@ -1,38 +1,22 @@
-# =====================
-# 1. Dependencies
-# =====================
-FROM node:20-alpine AS deps
+# Build stage
+FROM node:18-alpine AS builder
 WORKDIR /app
-
-COPY package.json package-lock.json* ./
-RUN npm ci --frozen-lockfile
-
-# =====================
-# 2. Build
-# =====================
-FROM node:20-alpine AS builder
-WORKDIR /app
-
-COPY --from=deps /app/node_modules ./node_modules
+COPY package*.json ./
+RUN npm ci
 COPY . .
-
-ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
-# =====================
-# 3. Production
-# =====================
-FROM node:20-alpine AS runner
+# Runner stage
+FROM node:18-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
 
-RUN npm install sharp --platform=linux --arch=x64 --libc=musl
+# ✅ INI YANG SERING KETINGGALAN
+COPY --from=builder /app/public ./public
 
 EXPOSE 3000
 CMD ["node", "server.js"]
