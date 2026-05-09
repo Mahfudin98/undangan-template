@@ -30,7 +30,7 @@ const INVITATION_DATA = {
   venue: "Ballroom Hotel Fitra",
   address:
     "Jl. K.H.Abdul Halim No.88, Munjul, Kec. Majalengka, Kabupaten Majalengka, Jawa Barat 45418", // Tambahkan alamat lengkap
-  dresscode: "Pink & Ungu",
+  dresscode: "Pink & Biru",
   parentName: "Aceng Sunanto & Mia Nurma Sunanto", // Nama orang tua / penyelenggara
   guestName: "Tamu Istimewa", // Bisa diubah dinamis per tamu
 };
@@ -43,7 +43,7 @@ export default async function InvitationPage() {
       className="min-h-screen relative overflow-hidden"
       style={{
         background:
-          "linear-gradient(160deg, #fff0f9 0%, #f5e8ff 30%, #ffe0f5 60%, #f8e8ff 100%)",
+          "linear-gradient(160deg, #eff6ff 0%, #dbeafe 30%, #bfdbfe 60%, #e0f2fe 100%)",
       }}
     >
       {/* Music Player */}
@@ -59,19 +59,19 @@ export default async function InvitationPage() {
         <div
           className="absolute top-[-10%] right-[-10%] w-80 h-80 rounded-full opacity-20"
           style={{
-            background: "radial-gradient(circle, #b347ea, transparent)",
+            background: "radial-gradient(circle, #3b82f6, transparent)",
           }}
         />
         <div
           className="absolute bottom-[10%] left-[-8%] w-72 h-72 rounded-full opacity-15"
           style={{
-            background: "radial-gradient(circle, #ff85c2, transparent)",
+            background: "radial-gradient(circle, #60a5fa, transparent)",
           }}
         />
         <div
           className="absolute top-[40%] left-[5%] w-48 h-48 rounded-full opacity-10"
           style={{
-            background: "radial-gradient(circle, #ffd700, transparent)",
+            background: "radial-gradient(circle, #38bdf8, transparent)",
           }}
         />
       </div>
@@ -141,7 +141,7 @@ export default async function InvitationPage() {
               className="absolute inset-0 rounded-full animate-rotate-slow opacity-30"
               style={{
                 background:
-                  "conic-gradient(#ff85c2, #b347ea, #ffd700, #ff3399, #ff85c2)",
+                  "conic-gradient(#60a5fa, #3b82f6, #38bdf8, #1d4ed8, #60a5fa)",
                 margin: "-8px",
                 filter: "blur(4px)",
               }}
@@ -149,7 +149,7 @@ export default async function InvitationPage() {
             {/* <UnicornHead className="relative w-36 h-36 mx-auto drop-shadow-2xl" /> */}
             <div
               className="text-7xl mb-2 animate-bounce-gentle inline-flex w-32 h-32 rounded-full object-cover overflow-hidden items-center"
-              style={{ filter: "drop-shadow(0 4px 12px rgba(179,71,234,0.3))" }}
+              style={{ filter: "drop-shadow(0 4px 12px rgba(59,130,246,0.3))" }}
             >
               <Image
                 width={1080}
@@ -163,7 +163,7 @@ export default async function InvitationPage() {
           <div
             className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase"
             style={{
-              background: "linear-gradient(135deg, #ffd700, #ff85c2)",
+              background: "linear-gradient(135deg, #38bdf8, #60a5fa)",
               color: "#fff",
               letterSpacing: "0.15em",
             }}
@@ -184,7 +184,7 @@ export default async function InvitationPage() {
         >
           <p
             className="text-sm font-semibold tracking-[0.2em] uppercase mb-2"
-            style={{ color: "#b347ea" }}
+            style={{ color: "#3b82f6" }}
           >
             Dengan penuh suka cita
           </p>
@@ -202,7 +202,7 @@ export default async function InvitationPage() {
             className="text-4xl sm:text-5xl font-bold mt-2 mb-1"
             style={{
               fontFamily: "var(--font-script-loaded, cursive)",
-              color: "#b347ea",
+              color: "#3b82f6",
             }}
           >
             {INVITATION_DATA.birthdayPerson}
@@ -211,8 +211,8 @@ export default async function InvitationPage() {
           <div
             className="inline-block px-6 py-2 rounded-full font-black text-2xl text-white mt-2"
             style={{
-              background: "linear-gradient(135deg, #ff85c2, #b347ea)",
-              boxShadow: "0 8px 25px rgba(179,71,234,0.4)",
+              background: "linear-gradient(135deg, #60a5fa, #3b82f6)",
+              boxShadow: "0 8px 25px rgba(59,130,246,0.4)",
             }}
           >
             🎂 {INVITATION_DATA.age} Tahun 🎂
@@ -220,14 +220,14 @@ export default async function InvitationPage() {
 
           <RainbowDivider />
 
-          <p className="text-sm" style={{ color: "#7c15c8" }}>
+          <p className="text-sm" style={{ color: "#1d4ed8" }}>
             Kepada Yth.
           </p>
           <p
             className="text-2xl font-bold mt-1"
             style={{
               fontFamily: "var(--font-script-loaded, cursive)",
-              color: "#ff3399",
+              color: "#2563eb",
             }}
           >
             {INVITATION_DATA.guestName}
@@ -235,7 +235,7 @@ export default async function InvitationPage() {
 
           <p
             className="mt-4 text-sm leading-relaxed"
-            style={{ color: "#7c15c8" }}
+            style={{ color: "#1d4ed8" }}
           >
             Kami dengan gembira mengundang kamu untuk merayakan hari yang ajaib
             bersama kami! 🦄✨
@@ -256,7 +256,7 @@ export default async function InvitationPage() {
             className="text-center text-xl font-bold mb-6"
             style={{
               fontFamily: "var(--font-display-loaded, serif)",
-              color: "#7c15c8",
+              color: "#1d4ed8",
             }}
           >
             ✨ Detail Acara ✨
@@ -280,10 +280,10 @@ export default async function InvitationPage() {
                 className="flex items-start gap-4 p-4 rounded-2xl transition-all duration-300"
                 style={{
                   background: highlight
-                    ? "linear-gradient(135deg, rgba(255,133,194,0.15), rgba(179,71,234,0.15))"
+                    ? "linear-gradient(135deg, rgba(96,165,250,0.15), rgba(59,130,246,0.15))"
                     : "rgba(255,255,255,0.5)",
                   border: highlight
-                    ? "1.5px solid rgba(179,71,234,0.3)"
+                    ? "1.5px solid rgba(59,130,246,0.3)"
                     : "1.5px solid rgba(255,255,255,0.6)",
                 }}
               >
@@ -291,14 +291,14 @@ export default async function InvitationPage() {
                 <div>
                   <p
                     className="text-xs font-bold tracking-widest uppercase mb-0.5"
-                    style={{ color: "#b347ea" }}
+                    style={{ color: "#3b82f6" }}
                   >
                     {label}
                   </p>
                   <p
                     className="font-semibold text-base"
                     style={{
-                      color: "#3d0a5c",
+                      color: "#1e3a8a",
                       fontFamily: highlight
                         ? "var(--font-script-loaded, cursive)"
                         : "inherit",
@@ -317,28 +317,28 @@ export default async function InvitationPage() {
             <div className="flex gap-2 items-center">
               <div
                 className="w-6 h-6 rounded-full border-2 border-white shadow-md"
-                style={{ background: "#ff85c2" }}
+                style={{ background: "#60a5fa" }}
                 title="Pink"
               />
               <span
                 className="text-xs font-semibold"
-                style={{ color: "#b347ea" }}
+                style={{ color: "#3b82f6" }}
               >
                 Pink
               </span>
             </div>
-            <span className="text-[#b347ea] text-lg">&amp;</span>
+            <span className="text-[#3b82f6] text-lg">&amp;</span>
             <div className="flex gap-2 items-center">
               <div
                 className="w-6 h-6 rounded-full border-2 border-white shadow-md"
-                style={{ background: "#b347ea" }}
-                title="Ungu"
+                style={{ background: "#3b82f6" }}
+                title="Biru"
               />
               <span
                 className="text-xs font-semibold"
-                style={{ color: "#b347ea" }}
+                style={{ color: "#3b82f6" }}
               >
-                Ungu
+                Biru
               </span>
             </div>
           </div>
@@ -358,7 +358,7 @@ export default async function InvitationPage() {
             className="text-center text-xl font-bold mb-6"
             style={{
               fontFamily: "var(--font-display-loaded, serif)",
-              color: "#7c15c8",
+              color: "#1d4ed8",
             }}
           >
             🎈 Hitung Mundur 🎈
@@ -366,7 +366,7 @@ export default async function InvitationPage() {
           <CountdownTimer targetDate={INVITATION_DATA.isoDate} />
           <p
             className="text-center text-xs mt-5 font-medium tracking-wide"
-            style={{ color: "#b347ea" }}
+            style={{ color: "#3b82f6" }}
           >
             Menuju hari yang paling ajaib! ✨
           </p>
@@ -387,20 +387,20 @@ export default async function InvitationPage() {
               className="text-center text-xl font-bold mb-4"
               style={{
                 fontFamily: "var(--font-display-loaded, serif)",
-                color: "#7c15c8",
+                color: "#1d4ed8",
               }}
             >
               📍 Lokasi Acara
             </h2>
             <p
               className="text-center font-bold text-lg"
-              style={{ color: "#3d0a5c" }}
+              style={{ color: "#1e3a8a" }}
             >
               {INVITATION_DATA.venue}
             </p>
             <p
               className="text-center text-sm mt-1 mb-4"
-              style={{ color: "#b347ea" }}
+              style={{ color: "#3b82f6" }}
             >
               {INVITATION_DATA.address}
             </p>
@@ -411,10 +411,9 @@ export default async function InvitationPage() {
             className="w-full h-48 flex items-center justify-center relative"
             style={{
               background:
-                "linear-gradient(135deg, rgba(255,133,194,0.1), rgba(179,71,234,0.1))",
+                "linear-gradient(135deg, rgba(96,165,250,0.1), rgba(59,130,246,0.1))",
             }}
           >
-            {/* Replace iframe src with actual Google Maps embed URL */}
             <iframe
               src={`https://maps.google.com/maps?q=${encodeURIComponent(INVITATION_DATA.venue + " " + INVITATION_DATA.address)}&output=embed`}
               width="100%"
@@ -433,8 +432,8 @@ export default async function InvitationPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-white text-sm transition-all duration-300 hover:scale-105"
               style={{
-                background: "linear-gradient(135deg, #ff85c2, #b347ea)",
-                boxShadow: "0 8px 25px rgba(179,71,234,0.3)",
+                background: "linear-gradient(135deg, #60a5fa, #3b82f6)",
+                boxShadow: "0 8px 25px rgba(59,130,246,0.3)",
               }}
             >
               🗺️ Buka di Google Maps
@@ -448,7 +447,7 @@ export default async function InvitationPage() {
         {/* ═══ FOOTER ═══ */}
         <footer className="text-center py-8 space-y-3">
           <div className="flex justify-center gap-3 flex-wrap">
-            {["🦄", "🌈", "✨", "🎂", "💜", "🌸", "⭐"].map((emoji, i) => (
+            {["🦄", "🌈", "✨", "🎂", "💙", "🌸", "⭐"].map((emoji, i) => (
               <span
                 key={i}
                 className="text-2xl animate-bounce-gentle"
@@ -462,12 +461,12 @@ export default async function InvitationPage() {
             className="text-lg font-bold"
             style={{
               fontFamily: "var(--font-script-loaded, cursive)",
-              color: "#b347ea",
+              color: "#3b82f6",
             }}
           >
             With love & unicorn magic ✨
           </p>
-          <p className="text-xs" style={{ color: "#c8a8f9" }}>
+          <p className="text-xs" style={{ color: "#93c5fd" }}>
             — {INVITATION_DATA.parentName} —
           </p>
         </footer>

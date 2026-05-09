@@ -42,12 +42,12 @@ export function RSVPSection({ initialData }: RSVPSectionProps) {
           className="text-center text-xl font-bold mb-2"
           style={{
             fontFamily: "var(--font-display-loaded, serif)",
-            color: "#7c15c8",
+            color: "#1d4ed8",
           }}
         >
           💌 Konfirmasi Kehadiran
         </h2>
-        <p className="text-center text-sm mb-6" style={{ color: "#b347ea" }}>
+        <p className="text-center text-sm mb-6" style={{ color: "#3b82f6" }}>
           Beritahu kami sebelum 15 Mei 2026 ya!
         </p>
         <RSVPForm onSubmitted={handleSubmitted} />
@@ -67,12 +67,12 @@ export function RSVPSection({ initialData }: RSVPSectionProps) {
           className="text-center text-xl font-bold mb-2"
           style={{
             fontFamily: "var(--font-display-loaded, serif)",
-            color: "#7c15c8",
+            color: "#1d4ed8",
           }}
         >
           🌟 Ucapan & Doa
         </h2>
-        <p className="text-center text-sm mb-6" style={{ color: "#b347ea" }}>
+        <p className="text-center text-sm mb-6" style={{ color: "#3b82f6" }}>
           Pesan dari orang-orang tersayang ✨
         </p>
         <WishesWall key={refreshKey} initialData={entries} />

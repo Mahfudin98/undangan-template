@@ -7,6 +7,10 @@
   --color-unicorn-deep-purple: #7c15c8;
   --color-unicorn-lavender: #e8b4f8;
   --color-unicorn-sky: #a78bfa;
+  --color-unicorn-blue: #2563eb;
+  --color-unicorn-deep-blue: #1e40af;
+  --color-unicorn-light-blue: #dbeafe;
+  --color-unicorn-sky: #93c5fd;
   --color-unicorn-gold: #ffd700;
   --color-unicorn-peach: #ffb3d9;
   --color-unicorn-mint: #c8f7e8;
@@ -139,11 +143,11 @@
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(179, 71, 234, 0.4);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
   50% {
     box-shadow:
-      0 0 40px rgba(179, 71, 234, 0.8),
+      0 0 40px rgba(59, 130, 246, 0.8),
       0 0 60px rgba(255, 133, 194, 0.4);
   }
 }
@@ -160,7 +164,7 @@
   body {
     font-family: var(--font-body);
     background-color: var(--color-unicorn-white);
-    color: #3d0a5c;
+    color: #0f172a;
     overflow-x: hidden;
   }
 }
@@ -169,10 +173,10 @@
   .text-shimmer {
     background: linear-gradient(
       90deg,
-      var(--color-unicorn-purple),
-      var(--color-unicorn-hot-pink),
-      var(--color-unicorn-gold),
-      var(--color-unicorn-purple)
+      var(--color-unicorn-blue),
+      var(--color-unicorn-sky),
+      #38bdf8,
+      var(--color-unicorn-blue)
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -191,18 +195,18 @@
   .unicorn-gradient {
     background: linear-gradient(
       135deg,
-      #ffd6f0 0%,
-      #e8b4f8 25%,
-      #c8a8f9 50%,
-      #ffb3d9 75%,
-      #fff0f9 100%
+      #dbeafe 0%,
+      #bfdbfe 25%,
+      #93c5fd 50%,
+      #60a5fa 75%,
+      #eff6ff 100%
     );
   }
 
   .card-shadow {
     box-shadow:
-      0 20px 60px rgba(179, 71, 234, 0.2),
-      0 4px 20px rgba(255, 51, 153, 0.1);
+      0 20px 60px rgba(59, 130, 246, 0.2),
+      0 4px 20px rgba(96, 165, 250, 0.12);
   }
 
   .animate-float {

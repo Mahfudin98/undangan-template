@@ -25,7 +25,11 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
       const res = await fetch("/api/rsvp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), status, message: message.trim() }),
+        body: JSON.stringify({
+          name: name.trim(),
+          status,
+          message: message.trim(),
+        }),
       });
 
       const json = await res.json();
@@ -34,7 +38,9 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
       setSubmitted(true);
       onSubmitted?.();
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Gagal mengirim. Coba lagi ya!");
+      setError(
+        e instanceof Error ? e.message : "Gagal mengirim. Coba lagi ya!",
+      );
     } finally {
       setLoading(false);
     }
@@ -48,12 +54,14 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
           className="text-2xl font-bold mb-2"
           style={{
             fontFamily: "var(--font-display-loaded, serif)",
-            color: "#7c15c8",
+            color: "#1d4ed8",
           }}
         >
-          {status === "hadir" ? "Yay! Sampai Jumpa! 🎉" : "Kami Akan Merindukanmu 🥺"}
+          {status === "hadir"
+            ? "Yay! Sampai Jumpa! 🎉"
+            : "Kami Akan Merindukanmu 🥺"}
         </h3>
-        <p className="text-sm" style={{ color: "#b347ea" }}>
+        <p className="text-sm" style={{ color: "#3b82f6" }}>
           {status === "hadir"
             ? "Konfirmasi kehadiranmu sudah kami terima. Sampai jumpa di hari yang ajaib!"
             : "Terima kasih sudah memberitahu kami. Semoga lain kali bisa hadir!"}
@@ -67,7 +75,7 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
       <div>
         <label
           className="block text-sm font-semibold mb-2 tracking-wide"
-          style={{ color: "#7c15c8" }}
+          style={{ color: "#1d4ed8" }}
         >
           Nama Lengkap ✨
         </label>
@@ -79,16 +87,16 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
           className="w-full px-4 py-3 rounded-2xl outline-none transition-all duration-300"
           style={{
             background: "rgba(255,255,255,0.7)",
-            border: "2px solid rgba(179,71,234,0.3)",
-            color: "#3d0a5c",
+            border: "2px solid rgba(59,130,246,0.3)",
+            color: "#0f172a",
             fontFamily: "var(--font-body-loaded, sans-serif)",
           }}
           onFocus={(e) => {
-            e.target.style.border = "2px solid rgba(179,71,234,0.8)";
-            e.target.style.boxShadow = "0 0 20px rgba(179,71,234,0.2)";
+            e.target.style.border = "2px solid rgba(59,130,246,0.8)";
+            e.target.style.boxShadow = "0 0 20px rgba(59,130,246,0.2)";
           }}
           onBlur={(e) => {
-            e.target.style.border = "2px solid rgba(179,71,234,0.3)";
+            e.target.style.border = "2px solid rgba(59,130,246,0.3)";
             e.target.style.boxShadow = "none";
           }}
         />
@@ -97,7 +105,7 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
       <div>
         <label
           className="block text-sm font-semibold mb-3 tracking-wide"
-          style={{ color: "#7c15c8" }}
+          style={{ color: "#1d4ed8" }}
         >
           Konfirmasi Kehadiran 🎈
         </label>
@@ -114,18 +122,16 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
               style={{
                 background:
                   status === value
-                    ? "linear-gradient(135deg, #ff85c2, #b347ea)"
+                    ? "linear-gradient(135deg, #60a5fa, #3b82f6)"
                     : "rgba(255,255,255,0.6)",
                 border:
                   status === value
                     ? "2px solid transparent"
-                    : "2px solid rgba(179,71,234,0.3)",
-                color: status === value ? "#fff" : "#7c15c8",
+                    : "2px solid rgba(59,130,246,0.3)",
+                color: status === value ? "#fff" : "#1d4ed8",
                 transform: status === value ? "scale(1.02)" : "scale(1)",
                 boxShadow:
-                  status === value
-                    ? "0 8px 25px rgba(179,71,234,0.4)"
-                    : "none",
+                  status === value ? "0 8px 25px rgba(59,130,246,0.4)" : "none",
               }}
             >
               {label}
@@ -137,7 +143,7 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
       <div>
         <label
           className="block text-sm font-semibold mb-2 tracking-wide"
-          style={{ color: "#7c15c8" }}
+          style={{ color: "#1d4ed8" }}
         >
           Ucapan / Pesan (Opsional) 💌
         </label>
@@ -149,23 +155,26 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
           className="w-full px-4 py-3 rounded-2xl outline-none transition-all duration-300 resize-none"
           style={{
             background: "rgba(255,255,255,0.7)",
-            border: "2px solid rgba(179,71,234,0.3)",
-            color: "#3d0a5c",
+            border: "2px solid rgba(59,130,246,0.3)",
+            color: "#0f172a",
             fontFamily: "var(--font-body-loaded, sans-serif)",
           }}
           onFocus={(e) => {
-            e.target.style.border = "2px solid rgba(179,71,234,0.8)";
-            e.target.style.boxShadow = "0 0 20px rgba(179,71,234,0.2)";
+            e.target.style.border = "2px solid rgba(59,130,246,0.8)";
+            e.target.style.boxShadow = "0 0 20px rgba(59,130,246,0.2)";
           }}
           onBlur={(e) => {
-            e.target.style.border = "2px solid rgba(179,71,234,0.3)";
+            e.target.style.border = "2px solid rgba(59,130,246,0.3)";
             e.target.style.boxShadow = "none";
           }}
         />
       </div>
 
       {error && (
-        <p className="text-sm text-center font-medium" style={{ color: "#e91e8c" }}>
+        <p
+          className="text-sm text-center font-medium"
+          style={{ color: "#2563eb" }}
+        >
           ⚠️ {error}
         </p>
       )}
@@ -177,10 +186,10 @@ export function RSVPForm({ onSubmitted }: RSVPFormProps) {
         style={{
           background:
             name && status
-              ? "linear-gradient(135deg, #ff85c2, #b347ea, #7c15c8)"
-              : "rgba(179,71,234,0.3)",
+              ? "linear-gradient(135deg, #60a5fa, #3b82f6, #1d4ed8)"
+              : "rgba(59,130,246,0.3)",
           boxShadow:
-            name && status ? "0 10px 30px rgba(179,71,234,0.4)" : "none",
+            name && status ? "0 10px 30px rgba(59,130,246,0.4)" : "none",
           fontFamily: "var(--font-display-loaded, serif)",
         }}
       >

@@ -54,7 +54,7 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
           className="fixed inset-0 z-[100] flex items-center justify-center"
           style={{
             background:
-              "linear-gradient(160deg, #ffe0f5 0%, #e8b4f8 40%, #c8a8f9 100%)",
+              "linear-gradient(160deg, #dbeafe 0%, #bfdbfe 40%, #93c5fd 100%)",
             opacity: closing ? 0 : 1,
             transform: closing ? "scale(1.05)" : "scale(1)",
             transition: "opacity 0.6s ease, transform 0.6s ease",
@@ -96,15 +96,15 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
               backdropFilter: "blur(30px)",
               WebkitBackdropFilter: "blur(30px)",
               border: "1.5px solid rgba(255,255,255,0.6)",
-              boxShadow: "0 30px 80px rgba(179,71,234,0.25)",
+              boxShadow: "0 30px 80px rgba(59,130,246,0.25)",
               animation:
                 "splashCardIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards",
             }}
           >
             {/* Unicorn */}
             <div
-              className="text-7xl mb-2 animate-bounce-gentle inline-flex border border-unicorn-purple h-52 w-52 rounded-full justify-center items-center overflow-hidden"
-              style={{ filter: "drop-shadow(0 4px 12px rgba(179,71,234,0.3))" }}
+              className="text-7xl mb-2 animate-bounce-gentle inline-flex border border-unicorn-blue h-52 w-52 rounded-full justify-center items-center overflow-hidden"
+              style={{ filter: "drop-shadow(0 4px 12px rgba(59,130,246,0.3))" }}
             >
               <Image
                 width={1080}
@@ -117,7 +117,7 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
 
             <div
               className="text-xs font-bold tracking-[0.25em] uppercase mb-3"
-              style={{ color: "#b347ea" }}
+              style={{ color: "#3b82f6" }}
             >
               ✨ Sebuah Undangan Istimewa ✨
             </div>
@@ -126,7 +126,7 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
               className="text-3xl font-black leading-tight mb-1"
               style={{
                 fontFamily: "var(--font-display-loaded, serif)",
-                background: "linear-gradient(135deg, #7c15c8, #ff3399)",
+                background: "linear-gradient(135deg, #1d4ed8, #60a5fa)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -138,7 +138,7 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
               className="text-2xl font-bold mb-5"
               style={{
                 fontFamily: "var(--font-script-loaded, cursive)",
-                color: "#b347ea",
+                color: "#3b82f6",
               }}
             >
               {birthdayPerson}
@@ -147,7 +147,7 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
             {/* Music note */}
             <p
               className="text-xs mb-6"
-              style={{ color: "#7c15c8", opacity: 0.8 }}
+              style={{ color: "#1d4ed8", opacity: 0.8 }}
             >
               🎵 Tap untuk membuka undangan &amp; memutar musik
             </p>
@@ -158,8 +158,8 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
               className="relative w-full py-4 rounded-2xl font-black text-white text-lg tracking-wide overflow-hidden cursor-pointer"
               style={{
                 background:
-                  "linear-gradient(135deg, #ff85c2, #b347ea, #7c15c8)",
-                boxShadow: "0 12px 35px rgba(179,71,234,0.5)",
+                  "linear-gradient(135deg, #60a5fa, #3b82f6, #1d4ed8)",
+                boxShadow: "0 12px 35px rgba(59,130,246,0.5)",
                 fontFamily: "var(--font-display-loaded, serif)",
               }}
             >
@@ -209,8 +209,8 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
             <div
               className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold text-white whitespace-nowrap"
               style={{
-                background: "linear-gradient(135deg, #ff85c2, #b347ea)",
-                boxShadow: "0 4px 15px rgba(179,71,234,0.4)",
+                background: "linear-gradient(135deg, #60a5fa, #3b82f6)",
+                boxShadow: "0 4px 15px rgba(59,130,246,0.4)",
               }}
             >
               <span className="flex items-end gap-0.5 h-3">
@@ -238,17 +238,17 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
             title={playing ? "Pause musik" : "Play musik"}
             className="relative w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-110 cursor-pointer disabled:opacity-40"
             style={{
-              background: "linear-gradient(135deg, #ff85c2, #b347ea, #7c15c8)",
+              background: "linear-gradient(135deg, #60a5fa, #3b82f6, #1d4ed8)",
               boxShadow: playing
-                ? "0 0 0 4px rgba(179,71,234,0.3), 0 8px 25px rgba(179,71,234,0.5)"
-                : "0 8px 25px rgba(179,71,234,0.4)",
+                ? "0 0 0 4px rgba(59,130,246,0.3), 0 8px 25px rgba(59,130,246,0.5)"
+                : "0 8px 25px rgba(59,130,246,0.4)",
             }}
           >
             {playing && (
               <span
                 className="absolute inset-0 rounded-full"
                 style={{
-                  border: "2px solid rgba(255,133,194,0.6)",
+                  border: "2px solid rgba(96,165,250,0.6)",
                   animation: "pingRing 1.5s ease-out infinite",
                 }}
               />

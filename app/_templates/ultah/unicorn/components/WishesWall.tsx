@@ -3,7 +3,7 @@
 import { RSVPEntry } from "@/app/api/rsvp/route";
 import { useState, useEffect, useCallback } from "react";
 
-const EMOJIS_HADIR = ["🎉", "🦄", "🌈", "💜", "🎂", "✨", "🌸", "🎈"];
+const EMOJIS_HADIR = ["🎉", "🦄", "🌈", "💙", "🎂", "✨", "🌸", "🎈"];
 const EMOJIS_TIDAK = ["😢", "💌", "🌷", "💫", "🥺", "🌙"];
 
 function formatDate(iso: string): string {
@@ -38,11 +38,11 @@ function WishCard({ entry, index }: WishCardProps) {
       className="rounded-2xl p-4 transition-all duration-300 hover:scale-[1.02]"
       style={{
         background: isHadir
-          ? "linear-gradient(135deg, rgba(255,133,194,0.12), rgba(179,71,234,0.12))"
+          ? "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(59,130,246,0.12))"
           : "rgba(255,255,255,0.5)",
         border: isHadir
-          ? "1.5px solid rgba(179,71,234,0.25)"
-          : "1.5px solid rgba(200,168,249,0.25)",
+          ? "1.5px solid rgba(59,130,246,0.25)"
+          : "1.5px solid rgba(147,197,253,0.25)",
         animationDelay: `${index * 0.08}s`,
       }}
     >
@@ -52,8 +52,8 @@ function WishCard({ entry, index }: WishCardProps) {
           className="w-10 h-10 rounded-full flex items-center justify-center text-lg flex-shrink-0 font-bold"
           style={{
             background: isHadir
-              ? "linear-gradient(135deg, #ff85c2, #b347ea)"
-              : "linear-gradient(135deg, #c8a8f9, #a78bfa)",
+              ? "linear-gradient(135deg, #60a5fa, #3b82f6)"
+              : "linear-gradient(135deg, #93c5fd, #60a5fa)",
           }}
         >
           {entry.name.charAt(0).toUpperCase()}
@@ -64,7 +64,7 @@ function WishCard({ entry, index }: WishCardProps) {
           <div className="flex items-center gap-2 flex-wrap">
             <span
               className="font-bold text-sm truncate"
-              style={{ color: "#3d0a5c" }}
+              style={{ color: "#0f172a" }}
             >
               {entry.name}
             </span>
@@ -72,9 +72,9 @@ function WishCard({ entry, index }: WishCardProps) {
               className="text-xs px-2 py-0.5 rounded-full font-semibold flex-shrink-0"
               style={{
                 background: isHadir
-                  ? "linear-gradient(135deg, #ff85c2, #b347ea)"
-                  : "rgba(200,168,249,0.3)",
-                color: isHadir ? "#fff" : "#7c15c8",
+                  ? "linear-gradient(135deg, #60a5fa, #3b82f6)"
+                  : "rgba(147,197,253,0.3)",
+                color: isHadir ? "#fff" : "#1d4ed8",
               }}
             >
               {emoji} {isHadir ? "Hadir" : "Tidak Hadir"}
@@ -85,14 +85,14 @@ function WishCard({ entry, index }: WishCardProps) {
           {entry.message && (
             <p
               className="mt-1.5 text-sm leading-relaxed"
-              style={{ color: "#5c1a8a" }}
+              style={{ color: "#1e40af" }}
             >
               &ldquo;{entry.message}&rdquo;
             </p>
           )}
 
           {/* Date */}
-          <p className="mt-1.5 text-xs" style={{ color: "#c8a8f9" }}>
+          <p className="mt-1.5 text-xs" style={{ color: "#93c5fd" }}>
             {formatDate(entry.createdAt)}
           </p>
         </div>
@@ -139,14 +139,14 @@ export function WishesWall({ initialData }: { initialData: RSVPEntry[] }) {
           className="flex-1 min-w-[80px] rounded-2xl p-3 text-center"
           style={{
             background:
-              "linear-gradient(135deg, rgba(255,133,194,0.2), rgba(179,71,234,0.2))",
-            border: "1.5px solid rgba(179,71,234,0.2)",
+              "linear-gradient(135deg, rgba(96,165,250,0.2), rgba(59,130,246,0.2))",
+            border: "1.5px solid rgba(59,130,246,0.2)",
           }}
         >
-          <p className="text-2xl font-black" style={{ color: "#b347ea" }}>
+          <p className="text-2xl font-black" style={{ color: "#3b82f6" }}>
             {totalHadir}
           </p>
-          <p className="text-xs font-semibold" style={{ color: "#7c15c8" }}>
+          <p className="text-xs font-semibold" style={{ color: "#1d4ed8" }}>
             🎉 Hadir
           </p>
         </div>
@@ -154,13 +154,13 @@ export function WishesWall({ initialData }: { initialData: RSVPEntry[] }) {
           className="flex-1 min-w-[80px] rounded-2xl p-3 text-center"
           style={{
             background: "rgba(255,255,255,0.5)",
-            border: "1.5px solid rgba(200,168,249,0.3)",
+            border: "1.5px solid rgba(147,197,253,0.3)",
           }}
         >
-          <p className="text-2xl font-black" style={{ color: "#a78bfa" }}>
+          <p className="text-2xl font-black" style={{ color: "#60a5fa" }}>
             {totalTidak}
           </p>
-          <p className="text-xs font-semibold" style={{ color: "#7c15c8" }}>
+          <p className="text-xs font-semibold" style={{ color: "#1d4ed8" }}>
             😢 Tidak Hadir
           </p>
         </div>
@@ -168,13 +168,13 @@ export function WishesWall({ initialData }: { initialData: RSVPEntry[] }) {
           className="flex-1 min-w-[80px] rounded-2xl p-3 text-center"
           style={{
             background: "rgba(255,255,255,0.5)",
-            border: "1.5px solid rgba(200,168,249,0.3)",
+            border: "1.5px solid rgba(147,197,253,0.3)",
           }}
         >
-          <p className="text-2xl font-black" style={{ color: "#ffd700" }}>
+          <p className="text-2xl font-black" style={{ color: "#38bdf8" }}>
             {entries.length}
           </p>
-          <p className="text-xs font-semibold" style={{ color: "#7c15c8" }}>
+          <p className="text-xs font-semibold" style={{ color: "#1d4ed8" }}>
             ✨ Total
           </p>
         </div>
@@ -190,11 +190,11 @@ export function WishesWall({ initialData }: { initialData: RSVPEntry[] }) {
             style={{
               background:
                 filter === f
-                  ? "linear-gradient(135deg, #ff85c2, #b347ea)"
+                  ? "linear-gradient(135deg, #60a5fa, #3b82f6)"
                   : "rgba(255,255,255,0.5)",
-              color: filter === f ? "#fff" : "#7c15c8",
+              color: filter === f ? "#fff" : "#1d4ed8",
               border:
-                filter === f ? "none" : "1.5px solid rgba(179,71,234,0.2)",
+                filter === f ? "none" : "1.5px solid rgba(59,130,246,0.2)",
             }}
           >
             {f === "semua"
@@ -214,8 +214,8 @@ export function WishesWall({ initialData }: { initialData: RSVPEntry[] }) {
           className="text-xs font-semibold px-3 py-1.5 rounded-xl transition-all duration-200 cursor-pointer disabled:opacity-50"
           style={{
             background: "rgba(255,255,255,0.6)",
-            border: "1.5px solid rgba(179,71,234,0.2)",
-            color: "#b347ea",
+            border: "1.5px solid rgba(59,130,246,0.2)",
+            color: "#3b82f6",
           }}
         >
           {loading ? "⏳ Memuat..." : "🔄 Refresh"}
@@ -226,7 +226,7 @@ export function WishesWall({ initialData }: { initialData: RSVPEntry[] }) {
       {filtered.length === 0 ? (
         <div className="text-center py-10">
           <p className="text-4xl mb-3">🦄</p>
-          <p className="text-sm font-medium" style={{ color: "#b347ea" }}>
+          <p className="text-sm font-medium" style={{ color: "#3b82f6" }}>
             Belum ada ucapan. Jadilah yang pertama!
           </p>
         </div>
@@ -235,7 +235,7 @@ export function WishesWall({ initialData }: { initialData: RSVPEntry[] }) {
           className="space-y-3 max-h-96 overflow-y-auto pr-1"
           style={{
             scrollbarWidth: "thin",
-            scrollbarColor: "#b347ea transparent",
+            scrollbarColor: "#3b82f6 transparent",
           }}
         >
           {filtered.map((entry, i) => (

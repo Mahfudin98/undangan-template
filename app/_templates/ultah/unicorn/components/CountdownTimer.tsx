@@ -55,15 +55,16 @@ export function CountdownTimer({ targetDate }: { targetDate: string }) {
           <div
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl glass-card flex items-center justify-center animate-pulse-glow"
             style={{
-              background: "linear-gradient(135deg, rgba(255,133,194,0.3), rgba(179,71,234,0.3))",
-              border: "2px solid rgba(179,71,234,0.4)",
+              background:
+                "linear-gradient(135deg, rgba(255,133,194,0.3), rgba(147, 197, 253, 1))",
+              border: "2px solid rgba(59, 130, 246, 0.3)",
             }}
           >
             <span
               className="text-2xl sm:text-3xl font-bold"
               style={{
                 fontFamily: "var(--font-display-loaded, serif)",
-                color: "#7c15c8",
+                color: "#1e40af",
               }}
             >
               {String(value).padStart(2, "0")}
@@ -71,7 +72,7 @@ export function CountdownTimer({ targetDate }: { targetDate: string }) {
           </div>
           <span
             className="mt-2 text-xs sm:text-sm font-semibold tracking-widest uppercase"
-            style={{ color: "#b347ea" }}
+            style={{ color: "#2563eb" }}
           >
             {label}
           </span>
