@@ -3,15 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "lh3.googleusercontent.com",
-      },
-      {
-        protocol: "https",
-        hostname: "invitation.lsskincare.id",
-      },
+    unoptimized: true,
+    domains: [
+      "lh3.googleusercontent.com",
+      "invitation.lsskincare.id", // ✅ tambahkan domain production
+      "localhost", // ✅ untuk dev
     ],
   },
 };

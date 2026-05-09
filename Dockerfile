@@ -28,14 +28,12 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Copy hasil build standalone (sudah include node_modules-nya sendiri)
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
-# ✅ HAPUS dua baris ini — jangan overwrite node_modules dari standalone:
-# COPY --from=deps /app/node_modules ./node_modules
-# COPY package.json ./
+# ✅ Reinstall sharp khusus untuk linux-musl (Alpine)
+RUN npm install sharp --platform=linux --arch=x64 --libc=musl
 
 EXPOSE 3000
 CMD ["node", "server.js"]
