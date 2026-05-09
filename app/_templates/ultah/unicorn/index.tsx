@@ -1,11 +1,7 @@
 import { RSVPEntry } from "@/app/api/rsvp/route";
 import { CountdownTimer } from "./components/CountdownTimer";
 import { RSVPSection } from "./components/RSVPSection";
-import {
-  UnicornHead,
-  FloatingElement,
-  RainbowDivider,
-} from "./components/UnicornElements";
+import { FloatingElement, RainbowDivider } from "./components/UnicornElements";
 import fs from "fs";
 import path from "path";
 import { WelcomeSplash } from "./components/WelcomeSplash";
