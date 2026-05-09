@@ -109,7 +109,7 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
               <Image
                 width={1080}
                 height={1080}
-                src="/images/kaka1.jpeg"
+                src="/images/Kaka1.jpeg"
                 alt={"Cecel 1"}
                 className="rounded-full object-cover"
               />

@@ -154,7 +154,7 @@ export default async function InvitationPage() {
               <Image
                 width={1080}
                 height={1080}
-                src="/images/kaka2.jpeg"
+                src="/images/Kaka2.jpeg"
                 alt="cecel2"
               />
             </div>
