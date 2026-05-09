@@ -48,7 +48,7 @@ export function RSVPSection({ initialData }: RSVPSectionProps) {
           💌 Konfirmasi Kehadiran
         </h2>
         <p className="text-center text-sm mb-6" style={{ color: "#b347ea" }}>
-          Beritahu kami sebelum 10 Mei 2026 ya!
+          Beritahu kami sebelum 15 Mei 2026 ya!
         </p>
         <RSVPForm onSubmitted={handleSubmitted} />
       </section>

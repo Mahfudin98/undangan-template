@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
 interface WelcomeSplashProps {
@@ -102,10 +103,16 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
           >
             {/* Unicorn */}
             <div
-              className="text-7xl mb-2 animate-bounce-gentle inline-block"
+              className="text-7xl mb-2 animate-bounce-gentle inline-flex border border-unicorn-purple h-52 w-52 rounded-full justify-center items-center overflow-hidden"
               style={{ filter: "drop-shadow(0 4px 12px rgba(179,71,234,0.3))" }}
             >
-              🦄
+              <Image
+                width={1080}
+                height={1080}
+                src={"/images/kaka1.jpeg"}
+                alt={"Cecel 1"}
+                className="rounded-full object-cover"
+              />
             </div>
 
             <div

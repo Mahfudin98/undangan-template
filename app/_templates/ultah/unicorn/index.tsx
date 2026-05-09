@@ -9,6 +9,7 @@ import {
 import fs from "fs";
 import path from "path";
 import { WelcomeSplash } from "./components/WelcomeSplash";
+import Image from "next/image";
 
 async function getRSVPData(): Promise<RSVPEntry[]> {
   try {
@@ -29,7 +30,7 @@ const INVITATION_DATA = {
   age: 5, // Usia
   date: "Sabtu, 16 Mei 2026",
   isoDate: "2026-05-16T14:00:00",
-  time: "14.00 WIB — Selesai",
+  time: "13:00 WIB — Selesai",
   venue: "Ballroom Hotel Fitra",
   address:
     "Jl. K.H.Abdul Halim No.88, Munjul, Kec. Majalengka, Kabupaten Majalengka, Jawa Barat 45418", // Tambahkan alamat lengkap
@@ -149,7 +150,18 @@ export default async function InvitationPage() {
                 filter: "blur(4px)",
               }}
             />
-            <UnicornHead className="relative w-36 h-36 mx-auto drop-shadow-2xl" />
+            {/* <UnicornHead className="relative w-36 h-36 mx-auto drop-shadow-2xl" /> */}
+            <div
+              className="text-7xl mb-2 animate-bounce-gentle inline-flex w-32 h-32 rounded-full object-cover overflow-hidden items-center"
+              style={{ filter: "drop-shadow(0 4px 12px rgba(179,71,234,0.3))" }}
+            >
+              <Image
+                width={1080}
+                height={1080}
+                src={"/images/kaka2.jpeg"}
+                alt="cecel2"
+              />
+            </div>
           </div>
 
           <div
