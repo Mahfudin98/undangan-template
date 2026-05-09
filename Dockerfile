@@ -33,6 +33,9 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
+# Pastikan sharp ada di dependencies
+RUN npm install sharp
+
 EXPOSE 3000
 
 # Jalankan server Next.js standalone
