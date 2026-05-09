@@ -5,7 +5,7 @@ FROM node:20-alpine AS deps
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
-RUN npm install --frozen-lockfile
+RUN npm ci --frozen-lockfile
 
 # =====================
 # 2. Build
@@ -28,11 +28,12 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Jika pakai standalone output (disarankan)
-COPY --from=builder /app/public ./public
+# Copy hasil build standalone + static assets + public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
 
 EXPOSE 3000
 
+# Jalankan server Next.js standalone
 CMD ["node", "server.js"]
