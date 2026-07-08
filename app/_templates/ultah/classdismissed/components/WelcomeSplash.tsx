@@ -32,7 +32,7 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
   }, [src]);
 
   const handleOpen = () => {
-    audioRef.current?.play().catch(() => {});
+    audioRef.current?.play().catch(() => { });
     setClosing(true);
     setTimeout(() => setOpen(false), 700);
   };
@@ -40,7 +40,7 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
   const toggleMusic = () => {
     const audio = audioRef.current;
     if (!audio) return;
-    playing ? audio.pause() : audio.play().catch(() => {});
+    playing ? audio.pause() : audio.play().catch(() => { });
   };
 
   return (
@@ -78,14 +78,14 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
 
           {/* ── Floating chalk symbols (background layer) ── */}
           {[
-            { sym: "★", top: "5%",  left: "6%",  sz: 28, c: "rgba(232,114,138,0.45)", d: 0 },
-            { sym: "✦", top: "8%",  right: "8%", sz: 22, c: "rgba(245,230,200,0.3)",  d: 0.5 },
-            { sym: "♥", top: "20%", left: "3%",  sz: 26, c: "rgba(232,114,138,0.35)", d: 1 },
-            { sym: "✦", top: "25%", right: "4%", sz: 18, c: "rgba(200,168,90,0.4)",   d: 0.3 },
+            { sym: "★", top: "5%", left: "6%", sz: 28, c: "rgba(232,114,138,0.45)", d: 0 },
+            { sym: "✦", top: "8%", right: "8%", sz: 22, c: "rgba(245,230,200,0.3)", d: 0.5 },
+            { sym: "♥", top: "20%", left: "3%", sz: 26, c: "rgba(232,114,138,0.35)", d: 1 },
+            { sym: "✦", top: "25%", right: "4%", sz: 18, c: "rgba(200,168,90,0.4)", d: 0.3 },
             { sym: "★", bottom: "22%", left: "4%", sz: 24, c: "rgba(245,230,200,0.28)", d: 1.5 },
             { sym: "♥", bottom: "16%", right: "6%", sz: 20, c: "rgba(232,114,138,0.4)", d: 0.8 },
-            { sym: "✦", top: "50%", left: "2%", sz: 16, c: "rgba(200,168,90,0.3)",    d: 2 },
-            { sym: "★", top: "55%", right: "3%", sz: 20, c: "rgba(232,114,138,0.3)",   d: 1.2 },
+            { sym: "✦", top: "50%", left: "2%", sz: 16, c: "rgba(200,168,90,0.3)", d: 2 },
+            { sym: "★", top: "55%", right: "3%", sz: 20, c: "rgba(232,114,138,0.3)", d: 1.2 },
           ].map((d, i) => (
             <span
               key={i}
@@ -314,6 +314,38 @@ export function WelcomeSplash({ src, birthdayPerson }: WelcomeSplashProps) {
                   animation: "shimmerBar 3s linear infinite reverse",
                 }}
               />
+            </div>
+            <div
+              className="rounded-sm p-4 relative mx-8 mt-5"
+              style={{
+                background: "var(--color-cd-cream, #f5e6c8)",
+                color: "var(--color-cd-maroon, #3a0a14)",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.45)",
+              }}
+            >
+              <div className="tape-top" />
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="font-black text-sm tracking-wide uppercase"
+                  style={{ fontFamily: "var(--font-body-loaded, sans-serif)" }}
+                >
+                  Disclaimer...!
+                </span>
+                <span style={{ fontSize: "0.9rem" }}>⚠️</span>
+              </div>
+              <p
+                style={{
+                  fontSize: "0.7rem",
+                  lineHeight: 1.5,
+                  fontFamily: "var(--font-body-loaded, sans-serif)",
+                  color: "rgba(58,10,20,0.85)",
+                }}
+              >
+                Keep it exclusive!
+                ACARA INI PRIVATE INVITATION ONLY !
+                Mohon untuk tidak menyebarluaskan, membagikan, dan memperlihatkan invitation ini kepada pihak lain. Thanks for understanding!
+                See you there 🩶
+              </p>
             </div>
           </div>
 

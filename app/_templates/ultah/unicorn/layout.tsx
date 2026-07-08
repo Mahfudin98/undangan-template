@@ -1,36 +1,43 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Dancing_Script, Nunito } from "next/font/google";
+import { Playfair_Display, Dancing_Script, Nunito, Anton, Oswald } from "next/font/google";
 import "./theme.css";
 
-const playfairDisplay = Playfair_Display({
+const anton = Anton({
   subsets: ["latin"],
   variable: "--font-display-loaded",
   display: "swap",
-  weight: ["400", "700", "900"],
-  style: ["normal", "italic"],
+  weight: ["400"],
 });
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: "--font-script-loaded",
   display: "swap",
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
 });
 
-const nunito = Nunito({
+const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-body-loaded",
   display: "swap",
-  weight: ["300", "400", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif-loaded",
+  display: "swap",
+  weight: ["400", "700", "900"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "🦄 Undangan Ulang Tahun — Tema Unicorn",
-  description: "You're invited to a magical unicorn birthday celebration!",
-  keywords: ["undangan", "ulang tahun", "unicorn", "birthday", "invitation"],
+  title: "🎓 Undangan Ulang Tahun — Class Dismissed",
+  description: "You're invited to a Private Birthday Party! Class Dismissed, Let's Party!",
+  keywords: ["undangan", "ulang tahun", "birthday", "party", "school", "class dismissed"],
   openGraph: {
-    title: "🦄 Undangan Ulang Tahun — Tema Unicorn",
-    description: "You're invited to a magical unicorn birthday celebration!",
+    title: "🎓 Undangan Ulang Tahun — Class Dismissed",
+    description: "You're invited to a Private Birthday Party! Class Dismissed, Let's Party!",
     type: "website",
   },
 };
@@ -43,7 +50,7 @@ export default function Layout({
   return (
     <html lang="id">
       <body
-        className={`${playfairDisplay.variable} ${dancingScript.variable} ${nunito.variable}`}
+        className={`${anton.variable} ${dancingScript.variable} ${oswald.variable} ${playfairDisplay.variable}`}
         style={{
           fontFamily: "var(--font-body-loaded, var(--font-body))",
         }}

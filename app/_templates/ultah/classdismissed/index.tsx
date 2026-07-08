@@ -1,4 +1,4 @@
-import { RSVPEntry } from "@/app/api/rsvp/route";
+﻿import { RSVPEntry } from "@/app/api/rsvp/route";
 import { CountdownTimer } from "./components/CountdownTimer";
 import { RSVPSection } from "./components/RSVPSection";
 import { WelcomeSplash } from "./components/WelcomeSplash";
@@ -49,9 +49,9 @@ const INVITATION_DATA = {
   /** Label owner */
   ownerLabel: "Owner",
   /** Catatan khusus */
-  note: "Jangan lupa patuhi dresscode ya, karna ada SPECIAL GIFT / DORPRIZE MENARIK untuk orang-orang yang beruntung!",
+  note: "DON'T FORGET PATUHI DRESSCODE !!! Karena jika kamu beruntung dapat DOORPRIZE / SPECIAL GIFT tidak akan SAH jika kamu tidak pakai DRESSCODE yang sesuai.",
   /** Nama tamu (bisa diubah dinamis) */
-  guestName: "Tamu Istimewa",
+  guestName: "Special Guest",
 };
 // =============================================
 
@@ -142,7 +142,7 @@ export default async function InvitationPage() {
     >
       {/* ── Music / Welcome splash ── */}
       <WelcomeSplash
-        src="/music/birthday.mp3"
+        src="/music/ku-bahagia_FwVExBPJ.mp3"
         birthdayPerson={INVITATION_DATA.birthdayPerson}
       />
 
@@ -291,13 +291,13 @@ export default async function InvitationPage() {
                 background: "var(--color-cd-cream, #f5e6c8)",
                 color: "var(--color-cd-maroon, #3a0a14)",
                 boxShadow: "3px 3px 10px rgba(0,0,0,0.5)",
-                transform: "rotate(2deg)",
+                transform: "rotate(3deg)",
                 fontFamily: "var(--font-body-loaded, sans-serif)",
               }}
             >
               <div
                 style={{
-                  fontSize: "0.6rem",
+                  fontSize: "0.7rem",
                   letterSpacing: "0.1em",
                   opacity: 0.6,
                   fontWeight: 500,
@@ -307,58 +307,15 @@ export default async function InvitationPage() {
               </div>
               <div
                 className="font-black tracking-wider"
-                style={{ fontSize: "0.85rem", lineHeight: 1.1 }}
+                style={{ fontSize: "0.95rem", lineHeight: 1.1 }}
               >
                 PRIVATE
               </div>
               <div
                 className="font-bold tracking-wide"
-                style={{ fontSize: "0.7rem", lineHeight: 1.2, opacity: 0.85 }}
+                style={{ fontSize: "0.8rem", lineHeight: 1.2, opacity: 0.85 }}
               >
                 BIRTHDAY PARTY
-              </div>
-            </div>
-          </div>
-
-          {/* Shield monogram */}
-          <div className="flex justify-start">
-            <div
-              className="w-20 h-24 flex flex-col items-center justify-center relative"
-              style={{
-                background: "linear-gradient(160deg, #7a2035 0%, #3a0a14 100%)",
-                clipPath: "polygon(50% 0%, 100% 20%, 100% 75%, 50% 100%, 0% 75%, 0% 20%)",
-                border: "none",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.6)",
-              }}
-            >
-              <div
-                className="absolute inset-2"
-                style={{
-                  clipPath: "polygon(50% 0%, 100% 20%, 100% 75%, 50% 100%, 0% 75%, 0% 20%)",
-                  border: "1.5px solid rgba(200,168,90,0.5)",
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: "var(--font-display-loaded, sans-serif)",
-                  fontSize: "2rem",
-                  color: "var(--color-cd-cream, #f5e6c8)",
-                  textShadow: "0 2px 8px rgba(0,0,0,0.5)",
-                  lineHeight: 1,
-                }}
-              >
-                {INVITATION_DATA.initial}
-              </span>
-              {/* Laurel hint */}
-              <div
-                style={{
-                  fontSize: "0.55rem",
-                  color: "rgba(200,168,90,0.7)",
-                  letterSpacing: "0.05em",
-                  marginTop: "2px",
-                }}
-              >
-                ✦ ✦ ✦
               </div>
             </div>
           </div>
@@ -504,7 +461,7 @@ export default async function InvitationPage() {
           <div className="grid grid-cols-2 gap-4 mt-4">
             {/* Date column */}
             <div
-              className="rounded-lg p-4"
+              className="rounded-lg p-4 text-center"
               style={{
                 background: "rgba(58,10,20,0.6)",
                 border: "1px solid rgba(200,168,90,0.2)",
@@ -712,9 +669,9 @@ export default async function InvitationPage() {
                 className="font-black text-sm tracking-wide uppercase"
                 style={{ fontFamily: "var(--font-body-loaded, sans-serif)" }}
               >
-                NOTE:
+                CAUTION...!
               </span>
-              <span style={{ fontSize: "0.9rem" }}>📢</span>
+              <span style={{ fontSize: "0.9rem" }}>🚨</span>
             </div>
             <p
               style={{
@@ -759,15 +716,6 @@ export default async function InvitationPage() {
             ⏳ Hitung Mundur
           </h2>
           <CountdownTimer targetDate={INVITATION_DATA.isoDate} />
-          <p
-            className="text-center text-xs mt-5 font-medium tracking-widest uppercase"
-            style={{
-              color: "rgba(245,230,200,0.7)",
-              fontFamily: "var(--font-body-loaded, sans-serif)",
-            }}
-          >
-            Menuju malam yang tidak terlupakan!
-          </p>
         </section>
 
         {/* ═══════════════════════════════════
